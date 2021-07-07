@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2529a888-be01-440b-9970-340641694fa4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     patient.`id` AS patient_id,
+     patient.`name` AS patient_name,
+     patient.`phone` AS patient_phone,
+     patient.`address` AS patient_address
+FROM
+     `patient` patient]]>
+	</queryString>
+	<field name="patient_id" class="java.lang.String"/>
+	<field name="patient_name" class="java.lang.String"/>
+	<field name="patient_phone" class="java.lang.Integer"/>
+	<field name="patient_address" class="java.lang.String"/>
+	<group name="patient_id">
+		<groupExpression><![CDATA[$F{patient_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="34" y="15" width="100" height="20" uuid="a231d03f-8b15-42ad-91d2-cf4d21f737b2"/>
+				<textFieldExpression><![CDATA[$F{patient_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="15" width="100" height="20" uuid="f2becba4-7e06-4577-88d8-d1abaaa1900f"/>
+				<textFieldExpression><![CDATA[$F{patient_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
